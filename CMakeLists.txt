@@ -1,8 +1,9 @@
-cmake_minimum_required (VERSION "3.10.2")
+cmake_minimum_required(VERSION 3.10)
+project(intent_recognizer)
 
-#our project name
-project("intent_recognizer")
-set(CMAKE_BUILD_TYPE Release)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++0x")
-add_executable ("${PROJECT_NAME}" "main.cpp" "main.h")
+set( CMAKE_CXX_STANDARD 11 )
 
+add_executable( "${PROJECT_NAME}" "main.cpp" )
+
+enable_testing()
+add_test( NAME Tests COMMAND "${PROJECT_NAME}" test )
